@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/materialize.min.css">
+    <script src="../js/createUser.js"></script>
+    <style>
+        /* fallback */
+        @font-face {
+            font-family: 'Material Icons';
+            font-style: normal;
+            font-weight: 400;
+            src: url(../fuente/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+        }
+
+        .material-icons {
+            font-family: 'Material Icons';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+        .arriba{
+            margin-top: 20px
+        }
+        .imagen{
+            text-align: center;
+            font-weight: bold
+        }
+        .color-blue{
+            color:#2196f3
+        }
+    </style>
+</head>
+
+<body>
+    <div class="arriba container">
+        <div class="imagen color-blue">
+            <i class="material-icons" style="font-size:100px;">person_add</i>
+        </div>
+        <div class="imagen">
+            CREAR USUARIO
+        </div>
+        <form action="" class="container" onsubmit="event.preventDefault(); crear()">
+            <div class="row">
+
+                <div class="input-field"><input type="text" name="name" id="name"><label for="name">Nombre</label></div>
+                <div class="input-field"><input type="text" name="cedula" id="cedula"><label for="cedula">Número de
+                        identificación</label></div>
+                <div class="input-field"><input type="password" name="password" id="password"><label for="password">Clave de
+                        ingreso</label></div>
+                <input type="submit" value="Crear usuario" class="btn col s12 blue">
+
+            </div>
+        </form>
+    </div>
+    <script src="../js/materialize.min.js"></script>
+</body>
+
+</html>

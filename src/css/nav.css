@@ -1,0 +1,21 @@
+.navegacion{
+    display: grid;
+    grid-template-columns: 200px 1fr
+}
+.navegacion .contenido{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    box-sizing: content-box
+}
+.navegacion .contenido a{
+    padding:0px  20px;
+}
+.active{
+    background-color: rgba(245, 239, 239, 0.5);
+}
+.inferior{
+    position: fixed;
+    bottom: 20px;
+    right: 20px
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/materialize.min.css">
+  <style>
+    /* fallback */
+    @font-face {
+      font-family: 'Material Icons';
+      font-style: normal;
+      font-weight: 400;
+      src: url(../fuente/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+    }
+
+    .material-icons {
+      font-family: 'Material Icons';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 24px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .final {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .final>:nth-child(2n) {
+      text-align: end
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <br>
+    <div class="fecha center">
+      23/08/2019 23:50
+    </div>
+    <div class="right" style="font-weight: bold">
+      Fact: 110
+    </div>
+    <br>
+    <div class="center">
+      <img src="https://www.jnconfecciones.com/logo%20jn.jpg" alt="" width="150px">
+    </div>
+
+    <div class="vendedor">Cajero: Mariana</div>
+    <div class="describe container">
+      <table>
+        <thead>
+          <tr>
+            <th>Descipción</th>
+            <th>Cantidad</th>
+            <th>Valor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Manzana</td>
+            <td>10</td>
+            <td>10.000</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="container">
+      <div class="final">
+        <div>Total</div>
+        <div>10.00</div>
+        <div>Pago</div>
+        <div class="">50.000</div>
+        <div>Cambio</div>
+        <div class="">40.000</div>
+      </div>
+    </div>
+  </div>
+  <script src="../js/materialize.min.js"></script>
+</body>
+
+</html>

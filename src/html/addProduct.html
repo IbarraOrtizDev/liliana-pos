@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/materialize.min.css">
+    <style>
+        /* fallback */
+        @font-face {
+            font-family: 'Material Icons';
+            font-style: normal;
+            font-weight: 400;
+            src: url(../fuente/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+        }
+
+        .material-icons {
+            font-family: 'Material Icons';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+<br>
+            <div class="container">
+                    <form class="row" onsubmit="event.preventDefault(); agregarProduct()">
+                        <div class="col s12">
+                            <input type="text" name="nombre" id="nombre" required placeholder="nombre">
+                        </div>
+                        <div class="col s5">
+                            <input type="text" name="codigo" id="codigo" required placeholder="Codigo">
+                        </div>
+                        <div class="col s6 offset-s1">
+                            <input type="text" name="costo" id="costo" required placeholder="Costo">
+                        </div>
+                        <div class="col s12">
+                            <select required id="medida">
+                                <option value="" disabled selected >Medida</option>
+                                <option value="UND">UND</option>
+                                <option value="KG">KG</option>
+                                <option value="BANDEJA">Bandeja</option>
+                            </select>
+                        </div>
+                        <div class="col s12">
+                            <select id="linea" required>
+                                <option value="" disabled selected>Linea</option>
+                            </select>
+                        </div>
+                        <div class="col s6">
+                            <input type="text" required name="cant" id="max" placeholder="Cantidad MAX">
+                        </div>
+                        <div class="col s6">
+                            <input type="text" required name="cant" id="min" placeholder="Cantidad MIN">
+                        </div>
+                        <div class="col s12">
+                            <input type="text" name="codigo" id="valor" required placeholder="Valor de venta">
+                        </div>
+                        <input class="btn col s12 blue" type="submit" value="enviar">
+                    </form>
+                </div>
+
+    </div>
+    <script src="../js/materialize.min.js"></script>
+    <script src="../js/addProduct.js"></script>
+</body>
+
+</html>

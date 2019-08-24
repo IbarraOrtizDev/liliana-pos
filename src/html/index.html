@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/materialize.min.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <script src="../js/index.js"></script>
+    <style>
+        /* fallback */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fuente/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+    </style>
+</head>
+<body>
+  <nav class="navegacion blue">
+    <div class="logo"><a href="./index.html">
+      <img src="" id="imagen-logo" width="60px" alt="" srcset="">
+    </a></div>
+    <div class="contenido">
+      <a class="waves-effect  waves-light" href="./lineas.html">LINEAS</a>
+      <a class="waves-effect  waves-light" href="./clienteprov.html">CLIENTES Y PROVEEDORES</a>
+      <a class="waves-effect  waves-light" href="./kardex.html">KERDEX</a>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="input-field col s6 offset-s3">
+        <input type="text" class="validate" id="busqueda">
+        <label for="busqueda">Nombre producto</label>
+      </div>
+     </div>
+    <div class="inferior btn-floating btn-large waves-effect waves-light blue">
+      <i class="large material-icons"  onclick="agregar()">add</i>
+    </div>
+  </div>
+  <div class="lista">
+      <table>
+        <thead>
+          <tr>
+              <th>CODIGO</th>
+              <th>DESCRIPCIÓN</th>
+              <th>DISPONIBLE</th>
+              <th>MEDIDA</th>
+              <th>LINEA</th>
+              <th>VALOR</th>
+              <th>EDITAR <i class="material-icons tiny">border_color</i></th>
+          </tr>
+        </thead>
+        <tbody class="cuerpo-tabla" id="cuerpo-tabla">
+            <tr>
+                <td>CODIGO</td>
+                <td>DESCRIPCIÓN</td>
+                <td>DISPONIBLE</td>
+                <td>MEDIDA</td>
+                <td>LINEA</td>
+                <td>VALOR</td>
+                <td>
+                  <div class="btn-small">
+                    <i class="material-icons">border_color</i>
+                  </div>
+                </td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+    <script src="../js/index.js"></script>
+  <script src="../js/materialize.min.js"></script>
+</body>
+</html>

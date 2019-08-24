@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/materialize.min.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <script src="../js/lineas.js"></script>
+    <script src="../js/todos.js"></script>
+    <style>
+        /* fallback */
+        @font-face {
+            font-family: 'Material Icons';
+            font-style: normal;
+            font-weight: 400;
+            src: url(../fuente/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+        }
+
+        .material-icons {
+            font-family: 'Material Icons';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navegacion blue">
+        <div class="logo"><a href="./index.html">LOGO</a></div>
+        <div class="contenido">
+            <a class="waves-effect  waves-light active" href="./lineas.html">LINEAS</a>
+            <a class="waves-effect  waves-light" href="./clienteprov.html">CLIENTES Y PROVEEDORES</a>
+            <a class="waves-effect  waves-light" href="./kardex.html">KERDEX</a>
+        </div>
+    </nav>
+    <div class="container">
+        <br>
+        <form class="row" onsubmit="event.preventDefault(); agregarLinea()">
+            <div class="input-field col s5 offset-s3">
+                <input type="text" name="linea" class="validate" required id="linea">
+                <label for="linea">Nueva linea</label>
+            </div>
+            <button style="margin-top:20px" class="btn-small blue"><i class="material-icons large">add</i></button>
+        </form>
+        <ul class="collection" id="list-line">
+        </ul>
+    </div>
+    <script src="../js/materialize.min.js"></script>
+</body>
+
+</html>

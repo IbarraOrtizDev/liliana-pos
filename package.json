@@ -1,0 +1,18 @@
+{
+  "name": "nitvel",
+  "version": "1.0.0",
+  "description": "\"Project for Liliana\"",
+  "main": "main.js",
+  "dependencies": {
+    "electron": "^5.0.8",
+    "mysql": "^2.17.1"
+  },
+  "devDependencies": {
+    "electron-reload": "^1.5.0"
+  },
+  "scripts": {
+    "test": "electron ."
+  },
+  "author": "Alex1Ibar",
+  "license": "MIT"
+}

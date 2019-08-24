@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/materialize.min.css">
+  <script src="../js/kardexmov.js"></script>
+  <style>
+    /* fallback */
+    @font-face {
+      font-family: 'Material Icons';
+      font-style: normal;
+      font-weight: 400;
+      src: url(../fuente/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+    }
+
+    .material-icons {
+      font-family: 'Material Icons';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 24px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="btn blue" onclick="window.history.back()">
+    <i class="material-icons left">arrow_back</i> Volver
+  </div>
+  <div class="container">
+    <div class="container">
+      <div class="col s8 offset-s2">
+        <select name="" id="mov">
+          <option value="" disabled selected>Seleccionar tipo de movimiento</option>
+          <option value="EPC">Entrada por compra</option>
+          <option value="EPA">Entrada por ajuste</option>
+          <option value="SPA">Salida por ajuste</option>
+          <option value="SPM">Salida por mal estado</option>
+          <option value="EO">Otra entrada</option>
+        </select>
+      </div>
+      <br><br>
+      <!--<div class="col s8 offset-s2">
+        <input type="date" name="" id="">
+      </div>-->
+      <form class="row" onsubmit="event.preventDefault(); agregarList()">
+        <div class="col s2">
+          <input type="text" required placeholder="Codigo" id="codigo" onkeyup="presionoTecla(event)">
+        </div>
+        <div class="col s4">
+          <input placeholder="Nombre" required type="text" id="nombre" onkeyup="presionoTecla(event)">
+        </div>
+        <div class="col s2">
+          <input type="number" required placeholder="Cantidad" id="cantidad">
+        </div>
+        <div class="col s3">
+          <input type="number" required placeholder="Costo" id="costo">
+        </div>
+        <input style="margin-top:10px" class="col btn-small blue" type="submit" value="Go">
+      </form>
+      <div class="row">
+        <div class="obtenido">
+          <div class="collection col s8 offset-s2" id="list-add">
+          </div>
+        </div>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>DEL</th>
+            <th>CODIGO</th>
+            <th>DESCRIPCIÓN</th>
+            <th>CANTIDAD</th>
+            <th>VALOR UNITARIO</th>
+            <th>VALOR TOTAL</th>
+          </tr>
+        </thead>
+        <tbody id="cuerpo-tabla">
+        </tbody>
+      </table>
+      <br><br>
+      <div class="row">
+        <div onclick="anexar()" class=" col blue btn s12">Completar</div>
+      </div>
+    </div>
+  </div>
+  <script src="../js/materialize.min.js"></script>
+  <script>
+    M.AutoInit()
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('select');
+      var instances = M.FormSelect.init(elems, options);
+    });
+  </script>
+</body>
+
+</html>

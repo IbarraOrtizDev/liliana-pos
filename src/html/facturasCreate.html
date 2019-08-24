@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/materialize.min.css">
+  <link rel="stylesheet" href="../css/facturasCreate.css">
+  <style>
+    /* fallback */
+    @font-face {
+      font-family: 'Material Icons';
+      font-style: normal;
+      font-weight: 400;
+      src: url(../fuente/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+    }
+
+    .material-icons {
+      font-family: 'Material Icons';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 24px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+</head>
+
+<body>
+  <form action="" class="row" onsubmit="event.preventDefault(); agregarList()">
+    <div class="col s1 offset-s2">
+      <input type="text" id="codigo" required placeholder="Codigo" onkeyup="presionoTecla(event)">
+    </div>
+    <div class="col s3">
+      <input placeholder="Nombre" required id="nombre" type="text" onkeyup="presionoTecla(event)">
+    </div>
+    <div class="col s1">
+      <input type="number" required id="cantidad" placeholder="Cantidad">
+    </div>
+    <div class="col s2">
+      <input type="number" required id="valor" placeholder="Valor">
+    </div>
+    <input style="margin-top:10px" class="col btn-small" type="submit" value="Go">
+  </form>
+  <div class="row">
+    <div class="obtenido">
+      <div class="collection col s8 offset-s2" id="list-add">
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <select name="" id="cliente">
+        <option value="" disabled selected>Seleccionar cliente</option>
+      </select>
+    </div>
+  </div>
+  <div class="container">
+    <table>
+      <thead>
+        <tr>
+          <th>DELETE</th>
+          <th>CODIGO</th>
+          <th>NOMBRE</th>
+          <th>CANTIDAD</th>
+          <th>VALOR UNIT</th>
+          <th>VALOR TOTAL</th>
+        </tr>
+      </thead>
+      <tbody id="cuerpo-tabla"></tbody>
+    </table>
+  </div>
+  <br>
+  <hr>
+  <div class="container">
+    <div class="input-field col s12">
+      <textarea id="textarea1" class="materialize-textarea"></textarea>
+      <label for="textarea1">Comentario</label>
+    </div>
+    <div class="row">
+      <div class="btn col s5 offset-s7 blue" onclick="crearFact()">Crear factura</div>
+    </div>
+  </div>
+  <div class="content-left oculto" id="completar">
+    <div class="content-sub">
+      <select name="" id="pag" class="">
+        <option value="" disabled selected>Seleccionar forma de pago</option>
+        <option value="contado">Contado</option>
+      </select>
+      <input type="text" placeholder="Cantidad recibida">
+      <div style="font-weight: bold">
+        Devolver: <span id="devolver"></span>
+      </div>
+      <div class="right"><div class="btn blue">Completar</div></div>
+    </div>
+  </div>
+  <script src="../js/materialize.min.js"></script>
+  <script src="../js/facturasCreate.js"></script>
+</body>
+
+</html>
