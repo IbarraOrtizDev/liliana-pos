@@ -62,6 +62,7 @@ function crearCompany(){
         width: 350,
         height: 570,
         resizable:false,
+        title:'Crear empresa',
         webPreferences: { nodeIntegration: true }
     });
     ventanaCreateCompany.loadURL(url.format({
@@ -76,6 +77,7 @@ function entradaUser(){
         width: 350,
         height: 450,
         resizable:false,
+        title:'Iniciar sección',
         webPreferences: { nodeIntegration: true }
     });
     ventanaEntryUser.loadURL(url.format({
@@ -89,6 +91,7 @@ function newUser(){
     ventanaCreateUser = new BrowserWindow({
         width: 350,
         height: 480,
+        title:'Crear usuario',
         webPreferences: { nodeIntegration: true },
         resizable:false
     });
@@ -150,6 +153,7 @@ ipcMain.on('agregar-product',()=> {
         width: 350,
         height: 480,
         resizable:false,
+        title:'Agregar producto',
         webPreferences: { nodeIntegration: true }
     })
 })
@@ -165,6 +169,7 @@ ipcMain.on('crear-user-empresa', ()=>{
         parent:ventana,
         width: 350,
         height: 600,
+        title:'Crear cliente o proveedor',
         resizable:false,
         webPreferences: { nodeIntegration: true }
     })
@@ -189,6 +194,7 @@ const templateMenu  = [
                         parent:ventana,
                         width: 800,
                         height: 600,
+                        title:'Facturas',
                         webPreferences: { nodeIntegration: true }
                     })
                 }
@@ -201,6 +207,7 @@ const templateMenu  = [
                         parent:ventana,
                         width: 800,
                         height: 600,
+                        title:'Nueva factura',
                         webPreferences: { nodeIntegration: true }
                     })
                 }
@@ -223,6 +230,7 @@ const templateMenu  = [
                 click(){
                     segundario('/src/html/reportemov.html', {
                         parent:ventana,
+                        title:'Reporte movimiento de inventario',
                         webPreferences: { nodeIntegration: true }
                     })
                 }
@@ -232,6 +240,7 @@ const templateMenu  = [
                 accelerator: 'Ctrl+V',
                 click(){
                     segundario('/src/html/reporteVentas.html', {
+                        title:'Reporte de ventas',
                         parent:ventana,
                         webPreferences: { nodeIntegration: true }
                     })
