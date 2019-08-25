@@ -13,11 +13,11 @@ ventanaEntryUser = null,
     connect,
     usuario;
 
-if (process.env.NODE_ENV !== 'production') {
+/*if (process.env.NODE_ENV !== 'production') {
     require('electron-reload')(__dirname, {
         electron: path.join(__dirname, '../node_modules', '.bin', 'electron')
     })
-}
+}*/
 
 function ventanaPrincipal() {
     ventana = new BrowserWindow({

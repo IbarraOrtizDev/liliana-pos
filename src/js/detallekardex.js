@@ -85,7 +85,7 @@ function organizar(){
     principal.seg.forEach(element => {
         $('cuerpo-tabla').innerHTML+=`<tr>
         <td>${element.name}</td>
-        <td>${element.cantidad}</td>
+        <td>${principal.init.type_mov == "SPV" ? element.cantidad : element.cant}</td>
         <td>${element.valor}</td>
       </tr>`
     });

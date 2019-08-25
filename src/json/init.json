@@ -2,12 +2,12 @@
     "creado":{
         "host":"localhost",
         "user":"root",
-        "password":"3048App",
+        "password":"1036App",
         "database":"nitvel_pos"
     },
     "pendiente":{
         "host":"localhost",
         "user":"root",
-        "password":"3048App"
+        "password":"1036App"
     }
 }
