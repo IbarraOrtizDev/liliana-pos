@@ -45,6 +45,7 @@
 </head>
 
 <body>
+  <div class="btn blue" onclick="window.history.back()">Volver</div>
   <div class="">
     <div class="">
       <div class="container">
@@ -55,37 +56,25 @@
                   23/08/2019 23:50
                 </div>
                 <div class="center" style="font-weight: bold">
-                  Fact: <span id="factura"></span>
+                  Movimiento: <span id="mov"></span>
+                </div>
+                <div class="center" style="font-weight: bold">
+                  Tipo de movimiento: <span id="type_mov"></span>
                 </div>
                 <br>
-                <div class="center">
-                  <img src="" alt="" width="100px">
-                </div>
-            
                 <!--<div class="vendedor">Cajero: Mariana</div>-->
                 <div class="describe container">
                   <table>
                     <thead>
                       <tr>
-                        <th>Descipción</th>
+                        <th>Descripción</th>
                         <th>Cantidad</th>
                         <th>Valor</th>
-                        <th>Importe</th>
                       </tr>
                     </thead>
                     <tbody id="cuerpo-tabla">
                     </tbody>
                   </table>
-                </div>
-                <div class="container">
-                  <div class="final">
-                    <div>Total</div>
-                    <div id="total">10.00</div>
-                    <div>Pago</div>
-                    <div class="" id="pago">50.000</div>
-                    <div>Cambio</div>
-                    <div class="" id="cambio">40.000</div>
-                  </div>
                 </div>
               </div>
         </div>
@@ -93,7 +82,7 @@
     </div>
   </div>
   <script src="../js/materialize.min.js"></script>
-  <script src="../js/facturasDetalle.js"></script>
+  <script src="../js/detallekardex.js"></script>
 </body>
 
 </html>

@@ -96,11 +96,11 @@
         <option value="" disabled selected>Seleccionar forma de pago</option>
         <option value="contado">Contado</option>
       </select>
-      <input type="text" placeholder="Cantidad recibida">
+      <input type="text" id="cantidad2" onblur="completar()" placeholder="Cantidad recibida">
       <div style="font-weight: bold">
         Devolver: <span id="devolver"></span>
       </div>
-      <div class="right"><div class="btn blue">Completar</div></div>
+      <div class="right"><div class="btn blue" onclick="enviarServ()">Completar</div></div>
     </div>
   </div>
   <script src="../js/materialize.min.js"></script>

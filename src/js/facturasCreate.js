@@ -3,7 +3,10 @@ const mysql = require('mysql'),
     datos = require(path.join(__dirname, '../json/init.json'));
 
 var connect,
-    arrayListAdd = [];
+    arrayListAdd = [],
+    factPrinc,
+    usuario;
+
 
 function coneccion() {
     connect = mysql.createConnection(datos.creado);
@@ -15,7 +18,6 @@ function coneccion() {
                 if (error) {
                     console.log(error)
                 } else {
-                    console.log(successful)
                     successful.forEach(element => {
                         $('#cliente').innerHTML += `<option value="${element.id}">${element.name}</option>`
                     })
@@ -114,18 +116,60 @@ function eliminar(dat) {
     arrayListAdd.splice(dat, 1)
     listar()
 }
-function crearFact(){
-    if(arrayListAdd.length > 0 && $('#cliente').value !== ""){
-        /*let factPrinc = {
-            cliente:$('#cliente').value,
-            fecha:Date.parse(new Date()),
-            estado:'pago',
-            form_pago:'efectivo',
-            commentario:$('#textarea1').value
-        }*/
+function crearFact() {
+    if (arrayListAdd.length > 0 && $('#cliente').value !== "") {
+        factPrinc = {
+            cliente: $('#cliente').value,
+            fecha: Date.parse(new Date()),
+            estado: 'pago',
+            form_pago: 'efectivo',
+            total: 0,
+            pago: null,
+            commentario: $('#textarea1').value
+        }
+        for (let a of arrayListAdd) {
+            factPrinc.total = factPrinc.total + (a.cantidad * a.valor)
+        }
         $('#completar').classList.remove('oculto')
-    }else{
+    } else {
         alert('Debes completar la información requerida')
     }
+}
+function completar() {
+    factPrinc.pago = parseInt($('#cantidad2').value);
+    let dev = factPrinc.pago - factPrinc.total
+    if (dev < 0) {
+        alert('Falta dinero')
+    }
+    $('#devolver').innerHTML = dev
+}
+
+function enviarServ() {
+    connect.query(`INSERT INTO factura(cliente, fecha, estado, form_pago, total, pago, comentario, user_id, type_mov) VALUES(${factPrinc.cliente}, ${factPrinc.fecha}, "${factPrinc.estado}", "${factPrinc.form_pago}", ${factPrinc.total}, ${factPrinc.pago}, "${factPrinc.commentario}", 1, "SPV")`, (err, successful) => {
+        if (err) {
+            console.log(err)
+        } else {
+            let id = successful.insertId
+            for (let a of arrayListAdd) {
+                connect.query(`INSERT INTO detalle_fact(id_factura, id_producto, cantidad, valor) VALUES(${id}, ${a.id_producto}, ${a.cantidad}, ${a.valor})`, (error) => {
+                    if (error) {
+                        console.log(error)
+                    } else {
+                        connect.query(`UPDATE productos SET cant=cant-${a.cantidad} WHERE id_productos=${a.id_producto}`, (malo) => {
+                            if (malo) {
+                                console.log(malo)
+                            }
+                        })
+                    }
+                })
+            }
+            volverNormal()
+        }
+    })
+}
+function volverNormal(){
+    $('#cantidad2').value="";
+    arrayListAdd=[];
+    listar()
 }
 coneccion()

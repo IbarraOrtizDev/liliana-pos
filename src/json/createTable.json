@@ -7,7 +7,7 @@
         "CREATE TABLE IF NOT EXISTS kardex(fecha BIGINT NOT NULL, id_kardex INT  PRIMARY KEY AUTO_INCREMENT, type_mov VARCHAR(4) NOT NULL, user_id INT NOT NULL )",
         "CREATE TABLE IF NOT EXISTS detalle_kardex( id_detalle_kardex INT PRIMARY KEY AUTO_INCREMENT, id_kardex INT NOT NULL, id_producto INT NOT NULL, cant INT NOT NULL NULL, valor INT NOT NULL )",
         "CREATE TABLE IF NOT EXISTS cliente_prov( id INT PRIMARY KEY AUTO_INCREMENT, type TINYINT NOT NULL, name VARCHAR(50) NOT NULL, doc VARCHAR(15) NOT NULL UNIQUE, direccion VARCHAR(50) NOT NULL, telefono VARCHAR(50) UNIQUE  )",
-        "CREATE TABLE IF NOT EXISTS factura( id_factura INT PRIMARY KEY AUTO_INCREMENT, cliente INT NOT NULL, fecha BIGINT NOT NULL, form_pago VARCHAR(10) NOT NULL, total INT NOT NULL, pago INT NOT NULL, comentario VARCHAR(250)   )",
+        "CREATE TABLE IF NOT EXISTS factura( id_factura INT PRIMARY KEY AUTO_INCREMENT, cliente INT NOT NULL, fecha BIGINT NOT NULL, form_pago VARCHAR(10) NOT NULL, total INT NOT NULL, pago INT NOT NULL, comentario VARCHAR(250), user_id INT NOT NULL, type_mov VARCHAR(4) NOT NULL   )",
         "CREATE TABLE IF NOT EXISTS detalle_fact(id_detalle INT PRIMARY KEY AUTO_INCREMENT, id_factura INT NOT NULL, id_producto INT NOT NULL, cantidad INT NOT NULL, valor INT NOT NULL )",
         "CREATE TABLE IF NOT EXISTS deudas( id_deuda INT PRIMARY KEY AUTO_INCREMENT, id_factura INT NOT NULL, valor INT NOT NULL, comentario VARCHAR(250), estado BOOLEAN NOT NULL, fecha BIGINT NOT NULL )",
         "CREATE TABLE IF NOT EXISTS pagosdeudas( id_deuda INT NOT NULL, id_pagos_deuda INT PRIMARY KEY AUTO_INCREMENT, fecha BIGINT NOT NULL, cantidad INT NOT NULL, restante INT NOT NULL )"

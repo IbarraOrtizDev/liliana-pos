@@ -61,6 +61,7 @@ function crearCompany(){
     ventanaCreateCompany = new BrowserWindow({
         width: 350,
         height: 570,
+        resizable:false,
         webPreferences: { nodeIntegration: true }
     });
     ventanaCreateCompany.loadURL(url.format({
@@ -74,6 +75,7 @@ function entradaUser(){
     ventanaEntryUser = new BrowserWindow({
         width: 350,
         height: 450,
+        resizable:false,
         webPreferences: { nodeIntegration: true }
     });
     ventanaEntryUser.loadURL(url.format({
@@ -87,7 +89,8 @@ function newUser(){
     ventanaCreateUser = new BrowserWindow({
         width: 350,
         height: 480,
-        webPreferences: { nodeIntegration: true }
+        webPreferences: { nodeIntegration: true },
+        resizable:false
     });
     ventanaCreateUser.loadURL(url.format({
         pathname:path.join(__dirname, '/src/html/createUser.html'),
@@ -103,7 +106,7 @@ function segundario(pathName, content){
         protocol:'file',
         slashes:true
     }))   
-    //ventanaNew.setMenuBarVisibility(false)
+    ventanaNew.setMenuBarVisibility(false)
 }
 function createDatabase() {
     let connect2 = mysql.createConnection(datos.pendiente);
@@ -146,6 +149,7 @@ ipcMain.on('agregar-product',()=> {
         parent:ventana,
         width: 350,
         height: 480,
+        resizable:false,
         webPreferences: { nodeIntegration: true }
     })
 })
@@ -161,6 +165,7 @@ ipcMain.on('crear-user-empresa', ()=>{
         parent:ventana,
         width: 350,
         height: 600,
+        resizable:false,
         webPreferences: { nodeIntegration: true }
     })
  })
@@ -208,9 +213,34 @@ const templateMenu  = [
                 }
             }
         ]
+    },
+    {
+        label:'Reportes',
+        submenu:[
+            {
+                label:'Reporte movimiento',
+                accelerator:'Ctrl+M',
+                click(){
+                    segundario('/src/html/reportemov.html', {
+                        parent:ventana,
+                        webPreferences: { nodeIntegration: true }
+                    })
+                }
+            },
+            {
+                label:'Reporte ventas',
+                accelerator: 'Ctrl+V',
+                click(){
+                    segundario('/src/html/reporteVentas.html', {
+                        parent:ventana,
+                        webPreferences: { nodeIntegration: true }
+                    })
+                }
+            }
+        ]
     }
 ]
-if(process.env.NODE_ENV !== "production"){
+/*if(process.env.NODE_ENV !== "production"){
     templateMenu.push({
         label:'DevTools',
         submenu:[
@@ -223,4 +253,4 @@ if(process.env.NODE_ENV !== "production"){
 
         ]
     })
-}
+}*/

@@ -7,8 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="../css/materialize.min.css">
-    <link rel="stylesheet" href="../css/nav.css">
-    <script src="../js/todos.js"></script>
     <style>
         /* fallback */
         @font-face {
@@ -37,35 +35,49 @@
 </head>
 
 <body>
-    <nav class="navegacion blue">
-        <div class="logo"><a href="./index.html">
-            <img src="" id="imagen-logo" width="60px" alt="" srcset="">
-        </a></div>
-        <div class="contenido">
-            <a class="waves-effect  waves-light" href="./lineas.html">LINEAS</a>
-            <a class="waves-effect  waves-light" href="./clienteprov.html">CLIENTES Y PROVEEDORES</a>
-            <a class="waves-effect  waves-light active" href="./kardex.html">KERDEX</a>
-        </div>
-    </nav>
-    <br>
     <div class="container">
+        <form class="row" onsubmit="event.preventDefault(); buscar()">
+            <div class="col s1">
+                <b>Desde:</b>
+            </div>
+            <div class="col s4">
+                <input id="init" required type="date">
+            </div>
+            <div class="col s1">
+                <b>Hasta:</b>
+            </div>
+            <div class="col s4">
+                <input id="end" required type="date">
+            </div>
+            <div class="col s2">
+                <input type="submit" class="btn-small blue" value="go">
+            </div>
+        </form>
+    </div>
+    <hr>
+    <div class="container">
+        <h5 class="center">Reporte movimiento de inventario</h5>
         <table>
             <thead>
                 <tr>
-                    <th>MOVIMIENTO</th>
                     <th>FECHA</th>
-                    <th>TIPO MOV</th>
-                    <th>USUARIO</th>
-                    <th>VER</th>
+                    <th>MOVIMIENTO</th>
+                    <th>PRODUCTO</th>
+                    <th>CANTIDAD</th>
                 </tr>
             </thead>
             <tbody id="cuerpo-tabla">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
             </tbody>
         </table>
     </div>
-    <a href="./kardexmov.html" class="btn-floating btn-large inferior blue waves-effect waves-light"><i class="material-icons">add</i></a>
     <script src="../js/materialize.min.js"></script>
-    <script src="../js/kardex.js"></script>
+    <script src="../js/reportemov.js"></script>
 </body>
 
 </html>

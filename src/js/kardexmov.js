@@ -100,7 +100,7 @@ function anexar() {
                 alert('Lo sentimos, hubo un error al ingresar la información')
             }else{
                 arrayListAdd.forEach((element, index) =>{
-                    console.log(`${successful.insertId}, ${element.id_producto}, ${element.cantidad}, ${element.costo}`)
+                    
                     connect.query(`INSERT INTO detalle_kardex(id_kardex, id_producto, cant, valor) VALUES(${successful.insertId}, ${element.id_producto}, ${element.cantidad}, ${element.costo})`, (error)=>{
                         if(error){
                             console.log(error)
