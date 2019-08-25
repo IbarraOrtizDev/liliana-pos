@@ -1,18 +1,43 @@
 {
-  "name": "nitvel",
+  "name": "nitvel-pos",
   "version": "1.0.0",
   "description": "\"Project for Liliana\"",
   "main": "main.js",
   "dependencies": {
-    "electron": "^5.0.8",
     "mysql": "^2.17.1"
   },
   "devDependencies": {
+    "electron": "^5.0.8",
+    "electron-builder": "^21.2.0",
     "electron-reload": "^1.5.0"
   },
   "scripts": {
-    "test": "electron ."
+    "test": "electron .",
+    "pack": "build --dir",
+    "dist": "build"
   },
   "author": "Alex1Ibar",
-  "license": "MIT"
+  "license": "MIT",
+  "build":{
+    "appId":"nitvel-pos",
+    "asar":true,
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "win": {
+      "target": "NSIS",
+      "icon": "build/icon.ico"
+    }
+  }
 }
