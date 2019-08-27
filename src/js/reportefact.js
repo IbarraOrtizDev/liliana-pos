@@ -14,7 +14,7 @@ function conectar() {
 function buscarFact() {
     let init = Date.parse(new Date($('init').value.split('-').join('/'))),
         end = Date.parse(new Date($('end').value.split('-').join('/'))) + 86399000
-    connect.query(`SELECT d.*, k.fecha, k.type_mov, p.name FROM detalle_fact d INNER JOIN factura k ON k.id_factura = d.id_factura INNER JOIN productos p ON p.id_productos = d.id_producto WHERE k.fecha>= ${init} AND k.fecha <= ${end}`, (err, successful) => {
+    connect.query(`SELECT d.*, k.fecha, k.type_mov, p.name FROM detalle_fact d INNER JOIN factura k ON k.id_factura = d.id_factura INNER JOIN productos p ON p.id_productos = d.id_producto WHERE k.fecha>= ${init} AND k.fecha <= ${end} AND k.estado != "anulado"`, (err, successful) => {
         if (err) {
             console.log(err)
         } else {
