@@ -43,10 +43,11 @@ function agregar() {
     ipcRenderer.send('agregar-product')
 }
 function listarProduct(product) {
+    console.log(product)
     let cuerpoTabla = document.getElementById('cuerpo-tabla');
     cuerpoTabla.innerHTML = ''
     product.forEach(element => {
-        cuerpoTabla.innerHTML += `<tr>
+        cuerpoTabla.innerHTML += `<tr class="${element.cant < element.cant_min ? "red" : element.cant < element.cant_min ?"yellow" : ""}">
         <td>${element.codigo}</td>
         <td>${element.name}</td>
         <td>${element.cant}</td>
