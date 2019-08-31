@@ -59,6 +59,7 @@ function buscarKardex(){
 }
 function organizar(){
     var movimiento;
+    $('comentario').innerHTML=principal.init.comentario
     switch (principal.init.type_mov){
         case "SPV":
             movimiento = "Salida por venta"

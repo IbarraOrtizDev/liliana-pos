@@ -68,7 +68,7 @@ function seleccionado(event) {
             let datoTrd = successful[0]
             $('#codigo').value = datoTrd.codigo;
             $('#nombre').value = datoTrd.name;
-            $('#valor').value = datoTrd.costo;
+            $('#valor').value = datoTrd.valor;
             $('#cantidad').focus()
             $('#list-add').innerHTML = ''
         }

@@ -94,11 +94,13 @@ function listar() {
 function anexar() {
     if ($('#mov').value !== "" && arrayListAdd.length > 0) {
         let fecha = Date.parse(new Date())
-        connect.query(`INSERT INTO kardex(fecha, type_mov, user_id) VALUES(${fecha}, "${$('#mov').value}", ${usuario})`, (err, successful)=>{
+        connect.query(`INSERT INTO kardex(fecha, type_mov, user_id, comentario) VALUES(${fecha}, "${$('#mov').value}", ${usuario}, "${$('#comentario').value}")`, (err, successful)=>{
             if(err){
                 console.log(err)
                 alert('Lo sentimos, hubo un error al ingresar la información')
             }else{
+
+                $('#comentario').value=""
                 arrayListAdd.forEach((element, index) =>{
                     
                     connect.query(`INSERT INTO detalle_kardex(id_kardex, id_producto, cant, valor) VALUES(${successful.insertId}, ${element.id_producto}, ${element.cantidad}, ${element.costo})`, (error)=>{

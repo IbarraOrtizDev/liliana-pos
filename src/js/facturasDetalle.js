@@ -53,6 +53,7 @@ function buscar(){
             $('total').innerHTML=successful[0].total
             $('pago').innerHTML=successful[0].pago
             $('cambio').innerHTML=successful[0].pago-successful[0].total
+            $('comentario').innerHTML=successful[0].comentario
         }
     })
 }
